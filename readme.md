@@ -1,6 +1,6 @@
 # A geemap docker container
 
-This docker container has all the components you need to run geemap. It is made by Simon Mudd and not the geemap team (Quisheng Wu and colleagues) so any bugs in the container are not their fault!
+This docker container has all the components you need to run [geemap](https://github.com/giswqs/geemap). It is made by Simon Mudd and not the geemap team ([Quisheng Wu](https://github.com/giswqs) and colleagues) so any bugs in the container are not their fault!
 
 It is built within a miniconda parent container and also includes ipython so that you can host and jupyter notebook to run examples.
 
@@ -18,15 +18,15 @@ These are the bare bones instructions. For a bit more detail and potential bug f
 
 ### Running the container
 
-#### Part 1: set up a directory on your host machine to put landlab stuff. (in examples, this will be C:\landlab)
+#### Part 1: set up a directory on your host machine to put geemap stuff. (in examples, this will be C:\geemap_data)
 
-1. You will want to be able to see *landlab* output on your host operating system, so we will need to create a directory for hosting your *landlab* data, code, and scripts.
-2. For the purposes of this tutorial, I will assume you are using windows and that you have made a directory `C:\landlab`.
+1. You will want to be able to see *geemap* output on your host operating system, so we will need to create a directory for hosting your *geemap* data, code, and scripts.
+2. For the purposes of this tutorial, I will assume you are using windows and that you have made a directory `C:\geemap_data`.
   * You can put this directory anywhere you want as long as you remember where it is. You don't need to put anything in this directory yet.
 
 #### Part 2: Download and run the container
 
-_Preamble_: Once you have downloaded docker, you can control how much memory you give the docker containers. The default is 3Gb. If you have even moderate sized DEM data, this will not be enough. You can go into the docker settings (varies by operating system, use a search engine to figure out where they are) and increase the memory.
+_Preamble_: Once you have downloaded docker, you can control how much memory you give the docker containers. The default is 3Gb. You can go into the docker settings (varies by operating system, use a search engine to figure out where they are) and increase the memory.
 
 1. To get the container, go into a terminal (MacOS or Linux) or Powershell window (Windows) that has docker enabled and run:
 ```console
@@ -34,11 +34,11 @@ $ docker pull muddpile/geemap_docker
 ```
 2. Now you need to run the container:
 ```console
-$ docker run -it -v C:\geemap:/landlab muddpile/geemap_docker
+$ docker run -it -v C:\geemap_data:/geemap_data muddpile/geemap_docker
 ```
   1. The `-it` means "interactive".
   2. The `-v` stands for "volume" and in practice it links the files in the docker container with files in your host operating system.
-  3. After the `-v` you need to tell docker where the directories are on both the host operating system (in this case `C:\geemap`) and the container (in this case `/geemap`). These are separated by a colon (`:`).
+  3. After the `-v` you need to tell docker where the directories are on both the host operating system (in this case `C:\geemap_data`) and the container (in this case `/geemap_data`). These are separated by a colon (`:`).
 
 
 #### Running a jupyter notebook from this container
@@ -48,10 +48,10 @@ $ docker run -it -v C:\geemap:/landlab muddpile/geemap_docker
 2. You need to open your docker container with a port (using the `-p` flag, `8888:8888` is a common port):
 
 ```console
-> docker run -it -v C:\geemap:/geemap -p 8888:8888 muddpile/geemap_docker
+> docker run -it -v C:\geemap_data:/geemap_data -p 8888:8888 muddpile/geemap_docker
 ```
 
-  * Note that you should update the `C:\landlab` to reflect the directory structure on your local machine.
+  * Note that you should update the `C:\geemap_data` to reflect the directory structure on your local machine.
 
 
 3. Then, inside the container, start the notebook:

@@ -30,4 +30,4 @@ RUN mamba install geemap -c conda-forge
 RUN mamba install jupyter_contrib_nbextensions -c conda-forge
 
 # Set the working directory
-WORKDIR /geemap
+WORKDIR /geemap_data
