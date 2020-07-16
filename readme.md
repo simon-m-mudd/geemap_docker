@@ -4,6 +4,8 @@ This docker container has all the components you need to run [geemap](https://gi
 
 It is built within a miniconda parent container and also includes ipython so that you can host and jupyter notebook to run examples.
 
+See instructions below on how to get started.
+
 ## Instructions
 
 ### Installing Docker
@@ -20,7 +22,7 @@ These are the bare bones instructions. For a bit more detail and potential bug f
 
 #### Part 1: set up a directory on your host machine to put geemap stuff. (in examples, this will be C:\geemap_data)
 
-1. You will want to be able to see *geemap* output on your host operating system, so we will need to create a directory for hosting your *geemap* data, code, and scripts.
+1. You will want to be able to see *geemap* output on your host operating system, so we will need to create a directory for hosting your *geemap* notebooks, data, code, and scripts.
 2. For the purposes of this tutorial, I will assume you are using windows and that you have made a directory `C:\geemap_data`.
   * You can put this directory anywhere you want as long as you remember where it is. You don't need to put anything in this directory yet.
 
