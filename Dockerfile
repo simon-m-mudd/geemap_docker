@@ -27,7 +27,7 @@ RUN conda install -y wget unzip
 # Now the ipython stack for creating local ipython servers
 RUN conda install mamba -y -c conda-forge
 RUN mamba install geemap -y -c conda-forge
-# RUN mamba install jupyter_contrib_nbextensions -y -c conda-forge
+RUN mamba install jupyter_contrib_nbextensions -y -c conda-forge
 
 # Set the working directory
-# WORKDIR /geemap_data
+WORKDIR /geemap_data
